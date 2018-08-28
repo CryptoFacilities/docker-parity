@@ -5,5 +5,7 @@ language: generic
 services:
  - docker
 
-before_install:
+script:
  - docker build -t seanturner83/parity:1.11.8 .
+ - echo $DOCKER_PASSWORD | docker login $DOCKER_USER
+ - docker push seanturner83/parity:1.11.8
