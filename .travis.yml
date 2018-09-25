@@ -6,6 +6,6 @@ services:
  - docker
 
 script:
- - docker build -t cryptofacilities/parity:1.11.11 .
+ - docker build -t cryptofacilities/parity:2.0.6 .
  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
- - docker push cryptofacilities/parity:1.11.11
+ - docker push cryptofacilities/parity:2.0.6
