@@ -2,8 +2,8 @@ FROM debian:sid as builder
 
 RUN apt-get update && apt-get install -y curl
 
-ENV PARITY_VERSION=2.0.7
-ENV PARITY_CHECKSUM=217943ff1829768c7ed1421a3c9ed88e3d23de8924663b181be753814b8cf2e3
+ENV PARITY_VERSION=2.0.8
+ENV PARITY_CHECKSUM=f9f109f81693e790ca2c9771ddaea9ab3286d971b6f7242b627552c18ecd564a
 
 RUN curl -o parity "https://releases.parity.io/v${PARITY_VERSION}/x86_64-unknown-linux-gnu/parity" \
   && echo "$PARITY_CHECKSUM *parity" | sha256sum -c - | grep OK \
