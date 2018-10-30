@@ -5,7 +5,9 @@ language: generic
 services:
  - docker
 
+if: tag IS present
+
 script:
- - docker build -t cryptofacilities/parity:2.0.8 .
+ - docker build -t cryptofacilities/parity:${TRAVIS_TAG} .
  - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
- - docker push cryptofacilities/parity:2.0.8
+ - docker push cryptofacilities/parity:${TRAVIS_TAG}
