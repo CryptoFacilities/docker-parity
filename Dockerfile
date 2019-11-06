@@ -2,8 +2,8 @@ FROM debian:stretch as builder
 
 RUN apt-get update && apt-get install -y curl
 
-ENV PARITY_VERSION=2.4.9
-ENV PARITY_CHECKSUM=0d60bc6aea55619268c597049ebae404e4da6263f5eb465b53b56ca73bf46c00
+ENV PARITY_VERSION=2.5.9
+ENV PARITY_CHECKSUM=3089290d2ec46f324e6331b9cee0adc91a039bd6173bb2b3a0d70291281cb7f7
 
 RUN curl -o parity "https://releases.parity.io/ethereum/v${PARITY_VERSION}/x86_64-unknown-linux-gnu/parity" \
   && echo "$PARITY_CHECKSUM *parity" | sha256sum -c - | grep OK \
